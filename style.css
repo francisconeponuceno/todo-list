@@ -42,14 +42,43 @@ body{
     float: right;
     cursor: pointer;
     transition: 0.4s;
+    font-weight: 700;
 }
 
 .button-add-task:hover{
+    opacity: 0.8;
+}
+
+.button-add-task:active{
     opacity: 0.6;
+}
+
+.list-tasks{
+    width: 100%;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.task{
+    background-color: #f2f2f2;
+    box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 img{
     height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    
 }
 
-
+.task:hover img{
+    opacity: 1;
+}
