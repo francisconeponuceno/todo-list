@@ -12,80 +12,69 @@
 }
 
 body{
-    background: url("img/background.png");
+    background-color: white;
 }
 
 .container{
-    background-color: #d1d1d1;
+    flex-wrap: wrap;
+    background-color: #d1d1d5;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    border-radius: 10px;
+    width: 60%;
+    border-radius: 5px;
     padding: 20px;
     margin: 100px auto 0;
 }
 
-.input-task{
-    border: none;
-    border-radius: 5px;
-    width: 300px;
-    height: 40px;
-    padding-left: 10px;
-}
-
-.button-add-task{
-    border: none;
-    border-radius: 5px;
-    height: 40px;
-    background-color: #003329;
-    color: #ffffff;
-    font-size: 17px;
-    padding: 0 15px;
-    float: right;
-    cursor: pointer;
-    transition: 0.4s;
-    font-weight: 700;
-}
-
-.button-add-task:hover{
-    opacity: 0.8;
-}
-
-.button-add-task:active{
-    opacity: 0.6;
-}
-
-.list-tasks{
-    width: 100%;
-    list-style: none;
-    margin-top: 20px;
-}
-
-.task{
-    background-color: #f2f2f2;
-    box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
-    height: 50px;
+.container .header {
     display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    cursor: pointer;
-}
-
-img{
-    height: 25px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    background-color: white;
+    padding: 5px;
     
 }
 
-.task:hover img{
-    opacity: 1;
+.container .header > button {
+    width: 100px;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
 }
 
-.done{
-    background-color: #8fac55;
-    text-decoration: line-through;
+.container .header > button:hover{
+    background-color: white;
+    color: green;
+    border: 1px solid green;
+}
+
+.container .div-table {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: blue;
+}
+
+.container .div-table, table{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.container .div-table, tr > td {
+    flex-wrap: wrap;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.container .div-table i {
+    cursor: pointer;
 }
