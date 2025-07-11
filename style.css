@@ -17,6 +17,8 @@ body{
 
 .container{
     background-color: #d1d1d1;
+    justify-content: center;
+    align-items: center;
     width: 500px;
     border-radius: 10px;
     padding: 20px;
