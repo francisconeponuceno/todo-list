@@ -1,7 +1,9 @@
 import sqlite3
 
-conect = sqlite3.connect('crud.db')
-cursor = conect.cursor()
+def conexao():
+    conect = sqlite3.connect('crud.db')
+    cursor = conect.cursor()
+    return cursor
 
 ##### CREATE ######
 def CREATE_TABLE():
@@ -13,29 +15,34 @@ def CREATE_TABLE():
         setor TEXT);
     ''')
 
-def INSERT():
+def INSERT(dados):
+    conect = sqlite3.connect('crud.db')
+    cursor = conect.cursor()
     cursor.execute('''INSERT INTO funcionario (nome,funcao,salario,setor) VALUES(?,?,?,?)''',
-                   ['João','Axiliar de Ti','1900','Ti'])
-    
+                   [dados[1],dados[2],dados[3],dados[4]])
     conect.commit()
-    print('dados salvos com sucesso')
+    
 
 ##### README #####
 def README():
+    cursor = conexao()
     cursor.execute('SELECT * FROM funcionario')
     lista = cursor.fetchall()
     return lista
 
 ##### UPDATE #####
 def UPDATE(dados):
+    cursor = conexao()
     cursor.execute(f'''UPDATE funcionario SET 
-                   nome = {dados[1]},
-                   funcao = {dados[2]},
-                   salario = {dados[3]},
-                   setor = {dados[4]},
-                   WHERE id = {dados[0]}
-                   ''')
-    print(README())
-
+            nome = {dados[1]},
+            funcao = {dados[2]},
+            salario = {dados[3]},
+            setor = {dados[4]},
+            WHERE id = {dados[0]}
+    ''')
+    
 
 ##### DELETE #####
+def DELET(id):
+    cursor = conexao()
+    cursor.execute(f'DELET FROM funcionario WHERE id = {id}')
