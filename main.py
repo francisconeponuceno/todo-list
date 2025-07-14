@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect
-import database
+from database import README
 app = Flask(__name__)
 
 @app.route('/')
 def index():
 
-    lista = database.README()
+    lista = README()
     print(lista)
     return render_template('index.html',lista=lista)
 
