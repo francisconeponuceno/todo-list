@@ -1,7 +1,6 @@
 import sqlite3
 
 conect = sqlite3.connect('crud.db')
-
 cursor = conect.cursor()
 
 ##### CREATE ######
@@ -14,16 +13,19 @@ def CREATE_TABLE():
         setor TEXT);
     ''')
 
-def README ():
-    conect = sqlite3.connect('crud.db')
-
-    cursor = conect.cursor()
-    cursor.execute('''INSERT INTO funcionarios (nome,funcao,salario,setor) VALUES(?,?,?,?)''',
-                   ['Francisco','Analista de Sistema','2000','Ti'])
+def INSERT():
+    cursor.execute('''INSERT INTO funcionario (nome,funcao,salario,setor) VALUES(?,?,?,?)''',
+                   ['João','Axiliar de Ti','1900','Ti'])
     
     conect.commit()
-README()
+    print('dados salvos com sucesso')
+
 ##### README #####
+def README():
+    cursor.execute('SELECT * FROM funcionario')
+    dados = cursor.fetchall()
+    return dados
+README()
 
 ##### UPDATE #####
 
