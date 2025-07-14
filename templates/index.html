@@ -18,6 +18,7 @@
             <table>
                 <thead >
                     <tr>
+                        <th>Id</th>
                         <th>Nome</th>
                         <th>Função</th>
                         <th>Salário</th>
@@ -27,25 +28,18 @@
                     </tr>
                 </thead>
                 
-                
+                {% for i in lista %}
                 <tr>
-                    <td>Francisco</td>
-                    <td>Faturista</td>
-                    <td>1500</td>
-                    <td>Faturamento</td>
+                    <td>{i[0]}</td>
+                    <td>{i[1]}</td>
+                    <td>{i[2]}</td>
+                    <td>{i[3]}</td>
+                    <td>{i[4]}</td>
                     <td><i class="fa-solid fa-pen-to-square"></i></td>
-                    <td><i class="fa-solid fa-trash"></i></td>
-                    
+                    <td><i class="fa-solid fa-trash"></i></td>     
                 </tr>
-                <tr>
-                    <td>Francisco</td>
-                    <td>Faturista</td>
-                    <td>1500</td>
-                    <td>Faturamento</td>
-                    <td><i class="fa-solid fa-pen-to-square"></i></td>
-                    <td><i class="fa-solid fa-trash"></i></td>
+                {% end for %}
                 
-                </tr>
             </table>
         </div>
 

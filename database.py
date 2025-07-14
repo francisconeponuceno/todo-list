@@ -23,10 +23,19 @@ def INSERT():
 ##### README #####
 def README():
     cursor.execute('SELECT * FROM funcionario')
-    dados = cursor.fetchall()
-    return dados
-README()
+    lista = cursor.fetchall()
+    return lista
 
 ##### UPDATE #####
+def UPDATE(dados):
+    cursor.execute(f'''UPDATE funcionario SET 
+                   nome = {dados[1]},
+                   funcao = {dados[2]},
+                   salario = {dados[3]},
+                   setor = {dados[4]},
+                   WHERE id = {dados[0]}
+                   ''')
+    print(README())
+
 
 ##### DELETE #####
