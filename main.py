@@ -10,11 +10,11 @@ def index():
     return render_template('index.html',lista=lista,dados=dados_formulario)
 
 
-@app.route('/adicionar')
+@app.route('/adicionar', methods=['POST'])
 def adicionar():
-    
-    
-    return render_template('index.html')
+    form_dados = request.form.to_dict() # captura todos os campos do formulário
+    database.INSERT(dados=list(form_dados.values()))
+    return redirect('/')
     
 
 

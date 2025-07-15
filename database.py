@@ -19,10 +19,10 @@ def INSERT(dados):
     conect = sqlite3.connect('crud.db')
     cursor = conect.cursor()
     cursor.execute('''INSERT INTO funcionario (nome,funcao,salario,setor) VALUES(?,?,?,?)''',
-                   [dados[1],dados[2],dados[3],dados[4]])
+                   [dados[0],dados[1],dados[2],dados[3]])
     conect.commit()
     
-
+#INSERT(dados=['MARCELO','analista de Ti','2000','Ti'])
 ##### README #####
 def README():
     cursor = conexao()
