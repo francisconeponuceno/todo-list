@@ -15,7 +15,11 @@ def adicionar():
     form_dados = request.form.to_dict() # captura todos os campos do formulário
     database.INSERT(dados=list(form_dados.values()))
     return redirect('/')
+
     
+@app.route('/update', methods=['POST'])
+def update():
+    pass
 
 
 

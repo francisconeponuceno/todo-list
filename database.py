@@ -44,5 +44,9 @@ def UPDATE(dados):
 
 ##### DELETE #####
 def DELET(id):
-    cursor = conexao()
-    cursor.execute(f'DELET FROM funcionario WHERE id = {id}')
+    conect = sqlite3.connect('crud.db')
+    cursor = conect.cursor()
+    cursor.execute(f"DELETE FROM funcionario WHERE id = {id} ")
+    conect.commit()
+
+#DELET(7)
