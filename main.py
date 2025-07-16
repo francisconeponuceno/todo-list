@@ -22,6 +22,13 @@ def update():
     pass
 
 
+@app.route('/delete',methods=['POST', 'GET'])
+def delete():
+    id = request.form.to_dict()
+    id = list(id.values())
+    database.DELET(id[0])
+    return redirect('/')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

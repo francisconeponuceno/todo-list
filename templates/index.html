@@ -37,23 +37,37 @@
                     <td>{{i[3]}}</td>
                     <td>{{i[4]}}</td>
                     <td><i class="fa-solid fa-pen-to-square"  id="{{i[0]}}"></i></td>
-                    <td><i class="fa-solid fa-trash" id="{{i[0]}}"></i></td>     
+                    <td class="remover"><i class="fa-solid fa-trash" id="{{i[0]}}"></i></td>     
                 </tr>
                 
                 {% endfor %}
                 
             </table>
         </div>
-
     </div>
+
     <div class="modal-container">
         <div class="modal">
-            <form method="post" action="/adicionar">
+            <form >
                 <input type="text" name="nome" placeholder="nome" value="">
                 <input type="text" name="funcao" placeholder="função" value="">
                 <input type="text" name="salario" placeholder="salário" value="">
                 <input type="text" name="setor" placeholder="setor" value="">
                 <button type="submit" class="button">Salvar</button>
+                <input type="number" name="pont" class="pont">
+            </form>
+            
+        </div>
+    </div>
+
+    <div class="modal-container excluir">
+        <div class="modal">
+            <form method="post" action="/delete">
+                <div class="msg">
+                    <p>Deseja Excluir o registro</p>
+                    <input type="number" name="pont" class="pont-delete" style="width: 50px;">
+                </div>
+                <button type="submit" class="button">Excluir</button>
             </form>
         </div>
     </div>

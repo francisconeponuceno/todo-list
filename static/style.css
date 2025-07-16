@@ -95,6 +95,10 @@ body{
   border-right: none;
 }
 
+.msg {
+  display: flex;
+}
+
 .modal button {
   width: 100%;
   height: 35px;
