@@ -5,4 +5,12 @@ function abrirModal() {
     
 }
 
-const btn = document.que
+const editar = document.querySelector('.editar');
+const remover = document.querySelector('.remover');
+
+
+editar.addEventListener('click', function(event) {
+    
+    console.log(event.target.id)
+})
+

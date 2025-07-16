@@ -17,7 +17,7 @@ def adicionar():
     return redirect('/')
 
     
-@app.route('/update', methods=['POST'])
+@app.route('/update', methods=['POST','GET'])
 def update():
     pass
 

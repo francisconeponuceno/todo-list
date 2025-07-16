@@ -17,7 +17,7 @@
 
         <div class="div-table">
             
-            <table>
+            <table class="editar">
                 <thead >
                     <tr>
                         <th>Id</th>
@@ -30,13 +30,13 @@
                     </tr>
                 </thead>
                 {% for i in lista %}
-                <tr>
+                <tr >
                     <td>{{i[0]}}</td>
                     <td>{{i[1]}}</td>
                     <td>{{i[2]}}</td>
                     <td>{{i[3]}}</td>
                     <td>{{i[4]}}</td>
-                    <td><i class="fa-solid fa-pen-to-square" id="{{i[0]}}"></i></td>
+                    <td><i class="fa-solid fa-pen-to-square"  id="{{i[0]}}"></i></td>
                     <td><i class="fa-solid fa-trash" id="{{i[0]}}"></i></td>     
                 </tr>
                 
