@@ -2,9 +2,10 @@ import database
 from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def index():
-
     lista = database.README()
     dados_formulario = request.form.to_dict()
     return render_template('index.html',lista=lista,dados=dados_formulario)
@@ -19,7 +20,13 @@ def adicionar():
     
 @app.route('/update', methods=['POST','GET'])
 def update():
-    pass
+    id = request.form.to_dict()
+    id = list(id.values())
+    dados_form = database.UPDATE_LOGICA(id[0])
+    render_template('index.html',dados_form=dados_form)
+    return redirect('/')
+    
+
 
 
 @app.route('/delete',methods=['POST', 'GET'])

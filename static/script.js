@@ -1,24 +1,32 @@
 const ModalContainer = document.querySelector('.modal-container');
+const ModalAterar = document.querySelector('.alterar');
 const ModalExcluir = document.querySelector('.excluir');
+const tabela = document.querySelector('.tabela');
+let pontUpdate = document.querySelector('.pont-opdate');
+let pontDelete = document.querySelector('.pont-delete');
 
 function abrirModal() {
     ModalContainer.classList.add('active')
     
 }
 
-const editar = document.querySelector('.editar');
-const remover = document.querySelector('.remover');
+tabela.addEventListener('click', function(event) {
 
-let pontDelete = document.querySelector('.pont-delete');
+    const ElementoClicado = event.target;
 
-
-editar.addEventListener('click', function(event) {
-    
-    if (event.target.id == '') {
+    if (ElementoClicado.id == '') {
         return
     }
-    pontDelete.value = event.target.id
-    ModalExcluir.classList.add('active')
-     
+
+    if (ElementoClicado.classList.contains('fa-pen-to-square')) {
+        pontUpdate.value = ElementoClicado.id
+        ModalAterar.classList.add('active')
+    }
+
+    if (ElementoClicado.classList.contains('fa-trash')) {
+        pontDelete.value = ElementoClicado.id
+        ModalExcluir.classList.add('active')
+    }
+    
 })
 

@@ -23,12 +23,20 @@ def INSERT(dados):
     conect.commit()
     
 #INSERT(dados=['MARCELO','analista de Ti','2000','Ti'])
+
 ##### README #####
 def README():
     cursor = conexao()
     cursor.execute('SELECT * FROM funcionario')
-    lista = cursor.fetchall()
-    return lista
+    return cursor.fetchall()
+
+
+##### README COM CONDIÇÃO LÓGICA######
+def UPDATE_LOGICA(id):
+    cursor = conexao()
+    cursor.execute(f'SELECT * FROM funcionario WHERE id = {id}')
+    return cursor.fetchall()
+
 
 ##### UPDATE #####
 def UPDATE(dados):
