@@ -1,8 +1,9 @@
 import database
 from flask import Flask, render_template, request, redirect
+
+
+
 app = Flask(__name__)
-
-
 
 @app.route('/')
 def index():
@@ -18,22 +19,19 @@ def adicionar():
     return redirect('/')
 
     
-@app.route('/update', methods=['POST','GET'])
-def update():
-    id = request.form.to_dict()
-    id = list(id.values())
-    dados_form = database.UPDATE_LOGICA(id[0])
-    render_template('index.html',dados_form=dados_form)
+@app.route('/update/<int:id>', methods=['POST','GET'])
+def update(id):
+    lista = request.form.to_dict()
+    lista = list(lista.values())
+    lista.append(id)
+    database.UPDATE(dados=lista)
     return redirect('/')
     
-
-
-
-@app.route('/delete',methods=['POST', 'GET'])
-def delete():
-    id = request.form.to_dict()
-    id = list(id.values())
-    database.DELET(id[0])
+    
+@app.route('/delete/<int:id_task>',methods=['POST', 'GET'])
+def delete(id_task):
+    id = id_task
+    database.DELET(id)
     return redirect('/')
 
 

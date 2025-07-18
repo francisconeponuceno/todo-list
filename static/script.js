@@ -10,6 +10,7 @@ function abrirModal() {
     
 }
 
+/*
 tabela.addEventListener('click', function(event) {
 
     const ElementoClicado = event.target;
@@ -29,4 +30,4 @@ tabela.addEventListener('click', function(event) {
     }
     
 })
-
+*/

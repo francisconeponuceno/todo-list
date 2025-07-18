@@ -20,26 +20,33 @@
             <table class="tabela">
                 <thead >
                     <tr>
-                        <th>Id</th>
                         <th>Nome</th>
                         <th>Função</th>
                         <th>Salário</th>
                         <th>Setor</th>
                         <th>Editar</th>
-                        <th>Remover</th>
+                        <th>Excluir</th>
                     </tr>
                 </thead>
+
                 {% for i in lista %}
                 <tr >
-                    <td>{{i[0]}}</td>
-                    <td>{{i[1]}}</td>
-                    <td>{{i[2]}}</td>
-                    <td>{{i[3]}}</td>
-                    <td>{{i[4]}}</td>
-                    <td><i class="fa-solid fa-pen-to-square"  id="{{i[0]}}"></i></td>
-                    <td><i class="fa-solid fa-trash" id="{{i[0]}}"></i></td>     
+                    <form method="post" action="/update/{{i[0]}}">
+                        <td><input type="text" name="nome" value="{{i[1]}}"></td>
+                        <td><input type="text" name="funcao" value="{{i[2]}}"></td>
+                        <td><input type="text" name="salario" value="{{i[3]}}"></td>
+                        <td><input type="text" name="setor" value="{{i[4]}}"></td>
+                        <td> 
+                            <button type="submit" class="fa-solid fa-pen-to-square btn_excluir"></button>  
+                        </td>
+                    </form>
+                    
+                    <td>
+                        <form action="/delete/{{i[0]}}" method="post">
+                            <button type="submit" class="fa-solid fa-trash btn_excluir"></button>  
+                        </form>
+                    </td>
                 </tr>
-                
                 {% endfor %}
                 
             </table>
