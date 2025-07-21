@@ -1,3 +1,4 @@
+
 const ModalContainer = document.querySelector('.modal-container');
 const ModalAterar = document.querySelector('.alterar');
 const ModalExcluir = document.querySelector('.excluir');
@@ -10,7 +11,7 @@ function abrirModal() {
     
 }
 
-/*
+
 tabela.addEventListener('click', function(event) {
 
     const ElementoClicado = event.target;
@@ -20,6 +21,7 @@ tabela.addEventListener('click', function(event) {
     }
 
     if (ElementoClicado.classList.contains('fa-pen-to-square')) {
+        
         pontUpdate.value = ElementoClicado.id
         ModalAterar.classList.add('active')
     }
@@ -30,4 +32,4 @@ tabela.addEventListener('click', function(event) {
     }
     
 })
-*/
+

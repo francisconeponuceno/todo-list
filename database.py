@@ -22,6 +22,11 @@ def INSERT(dados):
                    [dados[0],dados[1],dados[2],dados[3]])
     conect.commit()
     
+def select(id):
+    conect = sqlite3.connect('crud.db')
+    cursor = conect.cursor()
+    cursor.execute(f'SELECT * FROM funcionario WHERE id = {id}')
+    return cursor.fetchall()
 
 ##### README #####
 def README():

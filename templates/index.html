@@ -31,20 +31,18 @@
 
                 {% for i in lista %}
                 <tr >
-                    <form method="post" action="/update/{{i[0]}}">
-                        <td><input type="text" name="nome" value="{{i[1]}}"></td>
-                        <td><input type="text" name="funcao" value="{{i[2]}}"></td>
-                        <td><input type="text" name="salario" value="{{i[3]}}"></td>
-                        <td><input type="text" name="setor" value="{{i[4]}}"></td>
+                    <form method="post" action="/select/{{i[0]}}">
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                        <td>{{i[3]}}</td>
+                        <td>{{i[4]}}</td>
                         <td> 
-                            <button type="submit" class="fa-solid fa-pen-to-square btn_excluir"></button>  
+                            <button type="submit" class="fa-solid fa-pen-to-square btn"></button>  
                         </td>
                     </form>
                     
                     <td>
-                        <form action="/delete/{{i[0]}}" method="post">
-                            <button type="submit" class="fa-solid fa-trash btn_excluir"></button>  
-                        </form>
+                        <button class="fa-solid fa-trash btn" id="{{i[0]}}"></button>  
                     </td>
                 </tr>
                 {% endfor %}
@@ -88,9 +86,10 @@
             <form method="post" action="/delete">
                 <div class="msg">
                     <p>Excluir o registro</p>
+                    
                     <input type="text" name="pont" class="pont-delete" style="width: 70px;">
                 </div>
-                <button type="submit" class="button">Excluir</button>
+                <button type="submit" class="button ">Excluir</button>
             </form>
         </div>
     </div>
