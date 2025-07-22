@@ -15,6 +15,7 @@ def index():
 def principal():
     return redirect('/')
 
+
 ## ADICIONAR OS DADOS
 @app.route('/adicionar', methods=['POST'])
 def adicionar():
@@ -29,21 +30,21 @@ def select(id):
     select_dados = database.select(id)
     return render_template('update.html',select_dados=select_dados)
 
-    
+
 ## FASER A ALTERAÇÃO DOS DADOS
 @app.route('/update/<int:id>', methods=['POST','GET'])
 def update(id):
     lista = request.form.to_dict()
     lista = list(lista.values())
     lista.append(id)
+    print(lista)
     database.UPDATE(dados=lista)
     return redirect('/')
     
-    
+
 ## FASER A EXCLUSÃO DOS DADOS
-@app.route('/delete',methods=['POST', 'GET'])
-def delete():
-    id = request.form['pont']
+@app.route('/delete/<int:id>',methods=['POST', 'GET'])
+def delete(id):
     database.DELET(id)
     return redirect('/')
 

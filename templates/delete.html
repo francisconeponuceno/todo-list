@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="modal-container-alterar">
+        <div class="modal">
+            <p>Deseja Excluir Este Registro?</p>
+            <form method="post" action="/delete/{{select_dados[0][0]}}">
+                <input type="text" name="nome" value="{{select_dados[0][1]}}">
+                <input type="text" name="funcao" value="{{select_dados[0][2]}}">
+                <input type="text" name="salario" value="{{select_dados[0][3]}}">
+                <input type="text" name="setor" value="{{select_dados[0][4]}}">
+                <button type="submit" class="button">Excluir</button>
+            </form>
+
+            <form action="/principal" method="post">
+                <button type="submit" class="button">Cancelar</button>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>
